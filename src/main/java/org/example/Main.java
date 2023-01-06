@@ -29,10 +29,12 @@ public class Main {
             }
             String result = underscores.toString();
             System.out.println(result);
+
+
             String computerResult = " ";
 
-
-        while (lives >= 0 || computerResult == word) {
+// Game
+        while ( lives >=0 && !computerResult.equals(word)) {
 
             System.out.println("Pick a letter:");
             char letterInput = scanner.next().charAt(0);
@@ -54,7 +56,15 @@ public class Main {
             }
         }
 
-            System.out.println("You LOSE");
+        // Results
+        if (lives<1) {
+            System.out.println("Unlucky - You've lost");
+        } else {
+            System.out.println("YOU ARE THE WINNER");
+
+        }
+
+
 
 
     }
