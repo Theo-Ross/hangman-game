@@ -57,10 +57,12 @@ public class Words {
         words.add("soursop");
     }
 
-    ;
+    private String word = " ";
 
-
-    public static String chooseWord() {
-        return words.get(RANDOM.nextInt(words.size()));
+    public String getWord() {
+        return word;
+    }
+    public void setWord() {
+      this.word = words.get(RANDOM.nextInt(words.size()));
     }
 }
