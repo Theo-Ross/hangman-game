@@ -29,55 +29,33 @@ public class Main {
             }
             String result = underscores.toString();
             System.out.println(result);
+            String computerResult = " ";
 
-        System.out.println("Pick a letter");
-        char letterInput = scanner.next().charAt(0);
 
-        if (word.contains(Character.toString(letterInput))) {
-            letters.add(letterInput);
-            System.out.println(letters);
-        } else {
-            guesses.add(letterInput);
-            lives -= 1;
-            System.out.println("Incorrect - lose a life - lives:" + lives);
+        while (lives >= 0 || computerResult == word) {
+
+            System.out.println("Pick a letter:");
+            char letterInput = scanner.next().charAt(0);
+
+            if (word.contains(Character.toString(letterInput))) {
+                System.out.println("Correct! - lives:" + lives);
+                letters.add(letterInput);
+                System.out.println(guesses);
+                computerResult = word.replaceAll("[^" + letters + "]", "_");
+                System.out.println(computerResult);
+
+            } else {
+                guesses.add(letterInput);
+                lives -= 1;
+                System.out.println("Incorrect - lose a life - lives:" + lives);
+                System.out.println(guesses);
+                computerResult = word.replaceAll("[^" + letters + "]", "_");
+                System.out.println(computerResult);
+            }
         }
 
-        String computerResult = word.replaceAll("[^" + letters + "]", "_");
-        System.out.println(computerResult);
+            System.out.println("You LOSE");
 
-
-        System.out.println("Pick a letter");
-        char letterInput2 = scanner.next().charAt(0);
-
-        if (word.contains(Character.toString(letterInput2))) {
-            letters.add(letterInput2);
-            System.out.println(letters);
-        } else {
-            guesses.add(letterInput2);
-            lives -= 1;
-            System.out.println("Incorrect - lose a life - lives:" + lives);
-        }
-
-        String computerResult2 = word.replaceAll("[^" + letters + "]", "_");
-
-        System.out.println(computerResult2);
-
-
-        System.out.println("Pick a letter");
-        char letterInput3 = scanner.next().charAt(0);
-
-        if (word.contains(Character.toString(letterInput3))) {
-            letters.add(letterInput3);
-
-        } else {
-            guesses.add(letterInput3);
-            lives -= 1;
-            System.out.println("Incorrect - lose a life - lives:" + lives);
-        }
-        System.out.println(guesses);
-        String computerResult3 = word.replaceAll("[^" + letters + "]", "_");
-
-        System.out.println(computerResult3);
 
     }
 }
