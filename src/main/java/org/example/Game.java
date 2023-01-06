@@ -1,7 +1,6 @@
 package org.example;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 
 public class Game {
@@ -32,7 +31,7 @@ public class Game {
 
 
 
-        while (results.getLives() >= 0 && !results.getComputerResult().equals(words.getWord())) {
+        while (results.getLives() >= 1 && !results.getComputerResult().equals(words.getWord())) {
 
         System.out.println("Pick a letter:");
         char letterInput = commands.pickLetter();
@@ -49,10 +48,10 @@ public class Game {
             results.decrementLives();
             System.out.println("Incorrect - lose a life - lives:" + results.getLives());
             System.out.println(guesses);
-            results.setComputerResult(words.getWord().replaceAll("[^" + letters + "]", "_"));
             System.out.println(results.getComputerResult());
         }
     }
+        results.finish();
 
 }
 }

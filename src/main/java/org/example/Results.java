@@ -6,6 +6,7 @@ public class Results {
    private int lives = 5;
 
    public void finish(){
+
         if (lives<1) {
             System.out.println("Unlucky - You've lost");
         } else {
@@ -25,9 +26,7 @@ public class Results {
         return lives;
     }
 
-    public void setLives(int lives) {
-        this.lives = lives;
-    }
+
 
     public void decrementLives(){
         this.lives -= 1;
