@@ -1,6 +1,7 @@
 package org.example;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 
@@ -8,13 +9,13 @@ public class Main {
 
         private static Scanner scanner = new Scanner(System.in);
 
-    private static ArrayList<Character> guessedLetters = new ArrayList<>();
-
-    static {
-
-    };
 
     public static void main(String[] args) {
+
+          ArrayList<Character> letters = new ArrayList<>();
+          ArrayList<Character> guesses = new ArrayList<>();
+
+          int lives = 5;
 
         System.out.println("Welcome to Hangman press Enter to play");
         String startPlay = scanner.nextLine();
@@ -29,45 +30,54 @@ public class Main {
             String result = underscores.toString();
             System.out.println(result);
 
-//        } else {
-//            System.out.println("Welcome to Hangman press Enter to play");
-//        }
-
         System.out.println("Pick a letter");
         char letterInput = scanner.next().charAt(0);
 
-        String computerResult = word.replaceAll("[^" + letterInput + "]", "_");
+        if (word.contains(Character.toString(letterInput))) {
+            letters.add(letterInput);
+            System.out.println(letters);
+        } else {
+            guesses.add(letterInput);
+            lives -= 1;
+            System.out.println("Incorrect - lose a life - lives:" + lives);
+        }
 
+        String computerResult = word.replaceAll("[^" + letters + "]", "_");
         System.out.println(computerResult);
 
-        if (computerResult == result) {
-            System.out.println("YOU LOOSE A LIFE");
-            Process.looseLife();
-            System.out.println("Lives:" + Process.lives);
-            guessedLetters.add(letterInput);
-        } else {
-            System.out.println("Congratulations that is correct");
-            System.out.println("Lives:" + Process.lives);
-        }
 
         System.out.println("Pick a letter");
         char letterInput2 = scanner.next().charAt(0);
 
-        String computerResult1 = word.replaceAll("[^" + letterInput + letterInput2 + "]", "_");
-
-        System.out.println(computerResult1);
-
-        if (computerResult == computerResult1) {
-            System.out.println("YOU LOOSE A LIFE");
-            Process.looseLife();
-            System.out.println("Lives:" + Process.lives);
-            guessedLetters.add(letterInput2);
+        if (word.contains(Character.toString(letterInput2))) {
+            letters.add(letterInput2);
+            System.out.println(letters);
         } else {
-            System.out.println("Congratulations that is correct");
-            System.out.println("Lives:" + Process.lives);
+            guesses.add(letterInput2);
+            lives -= 1;
+            System.out.println("Incorrect - lose a life - lives:" + lives);
         }
 
+        String computerResult2 = word.replaceAll("[^" + letters + "]", "_");
 
+        System.out.println(computerResult2);
+
+
+        System.out.println("Pick a letter");
+        char letterInput3 = scanner.next().charAt(0);
+
+        if (word.contains(Character.toString(letterInput3))) {
+            letters.add(letterInput3);
+
+        } else {
+            guesses.add(letterInput3);
+            lives -= 1;
+            System.out.println("Incorrect - lose a life - lives:" + lives);
+        }
+        System.out.println(guesses);
+        String computerResult3 = word.replaceAll("[^" + letters + "]", "_");
+
+        System.out.println(computerResult3);
 
     }
 }
