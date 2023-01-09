@@ -10,9 +10,9 @@ public class Results {
 
 
         if (lives < 1) {
-            System.out.println("Unlucky - You've lost");
+            System.out.println("\uD83E\uDEA6 Unlucky - You've lost \uD83E\uDEA6");
         } else {
-            System.out.println("YOU ARE THE WINNER");
+            System.out.println("\uD83E\uDD73 YOU ARE THE WINNER \uD83C\uDF89");
         }
 
     }

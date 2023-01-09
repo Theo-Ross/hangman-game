@@ -16,7 +16,7 @@ public class Image {
         if (lives == 3) {
             System.out.println("  ________");
             System.out.println("  |       |");
-            System.out.println("  |       O");
+            System.out.println("  |       \uD83D\uDE29");
             System.out.println("  |");
             System.out.println("  |");
             System.out.println("__|__");
@@ -24,7 +24,7 @@ public class Image {
         if (lives == 2) {
             System.out.println("  ________");
             System.out.println("  |       |");
-            System.out.println("  |       O");
+            System.out.println("  |       \uD83D\uDE22");
             System.out.println("  |       |");
             System.out.println("  | ");
             System.out.println("__|__");
@@ -32,7 +32,7 @@ public class Image {
         if (lives == 1) {
             System.out.println("  ________");
             System.out.println("  |       |");
-            System.out.println("  |     __O__");
+            System.out.println("  |     __\uD83D\uDE2D__");
             System.out.println("  |       |");
             System.out.println("  |");
             System.out.println("__|__");
@@ -40,7 +40,7 @@ public class Image {
         if (lives == 0) {
             System.out.println("  ________");
             System.out.println("  |       |");
-            System.out.println("  |     __O__");
+            System.out.println("  |     __\uD83D\uDC80__");
             System.out.println("  |       |");
             System.out.println("  |     _| |_");
             System.out.println("__|__");

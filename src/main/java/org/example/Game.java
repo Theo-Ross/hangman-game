@@ -38,7 +38,7 @@ public class Game {
             char letterInput = commands.pickLetter();
 
             if (words.getWord().contains(Character.toString(letterInput))) {
-                System.out.println("Correct! - lives:" + results.getLives());
+                System.out.println("Correct! - ❤️:" + results.getLives());
                 letters.add(letterInput);
                 System.out.println(guesses);
                 results.setComputerResult(words.getWord().replaceAll("[^" + letters + "]", "_"));
@@ -47,7 +47,7 @@ public class Game {
             } else {
                 guesses.add(letterInput);
                 results.decrementLives();
-                System.out.println("Incorrect - lose a life - lives:" + results.getLives());
+                System.out.println("Incorrect - \uD83D\uDC94 lose a life - ❤️:" + results.getLives());
                 image.hangingMan(results.getLives());
                 System.out.println(guesses);
                 System.out.println(results.getComputerResult());
