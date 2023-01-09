@@ -14,6 +14,8 @@ public class Game {
 
     Words words = new Words();
 
+
+    Image image = new Image();
     public void startGame() {
 
         guesses.clear();
@@ -47,6 +49,7 @@ public class Game {
                 guesses.add(letterInput);
                 results.decrementLives();
                 System.out.println("Incorrect - lose a life - lives:" + results.getLives());
+                image.hangingMan(results.getLives());
                 System.out.println(guesses);
                 System.out.println(results.getComputerResult());
             }
