@@ -24,7 +24,6 @@ public class Game {
 
         words.setWord();
 
-        System.out.println(words.getWord());
         StringBuilder underscores = new StringBuilder();
         for (int i = 0; i < words.getWord().length(); i++) {
             underscores.append("_");
