@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class Commands {
 
+
   private  Scanner scanner = new Scanner(System.in);
 
 
@@ -15,4 +16,12 @@ public class Commands {
     public String beginGame() {
         return scanner.nextLine();
     }
+
+    public String playAgain(){
+      return scanner.nextLine();
+    }
+
+
 }
+
+
